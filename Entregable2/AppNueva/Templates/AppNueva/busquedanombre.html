@@ -1,0 +1,36 @@
+{% extends "AppNueva/Padre.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h1 class="mb-5"> Busqueda de Empleado </h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<br>
+<center><h3 >{{ mensaje }}</h3></center> 
+
+
+<br>
+<center>
+<h4> Busca tu Empleado : </h4>
+
+<br>
+
+<form action="{% url 'buscar3' %}" method="GET"> {% csrf_token %}
+
+    <input type="text" name="nombre_empleado"  placeholder="Ingresa Nombre" >
+
+    <br>
+    <br>
+    <input type="submit" value="buscar">
+    
+</form>
+</center>
+
+
+{% endblock %}
+
+
+
